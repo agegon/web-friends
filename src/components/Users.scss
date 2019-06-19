@@ -1,0 +1,168 @@
+@import './_mixins.scss';
+
+.users-list {
+  width: 100%;
+  padding: 30px 20px;
+  @include borderbox;
+}
+
+.users-panel {
+  display: flex;
+  flex: auto;
+  justify-content: center;
+  align-items: center;
+  .space {
+    flex: auto;
+  }
+}
+
+.user {
+  display: flex;
+  min-height: 68px;
+  border-bottom: 1px solid #e5e5e5;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 16px;
+  text-align: left;
+  div {
+    flex: none;
+  }
+  .main-user {
+    display: flex;
+    flex: auto;
+    align-items: center;
+    .avatar {
+      margin: 0 5px;
+      width: 40px;
+      height: 40px;
+      margin: 0 10px;
+      border-radius: 50%;
+      overflow: hidden;
+      cursor: pointer;
+      img {
+        width: 100%;
+      }
+    }
+    .user-info {
+      margin: 0 5px;
+      overflow: hidden;
+      flex: 1 0 auto;
+      cursor: pointer;
+      span {
+        color: #5e6e79;
+      }
+    }
+  }
+  .btn {
+    margin: 10px 0;
+  }
+  &:first-of-type {
+    border-top: 1px solid #e5e5e5;
+  }
+}
+
+.checkbox {
+  div {
+    width: 10px;
+    height: 10px;
+    border: 1px solid #1c4a59;
+    background-color: transparent;
+    position: absolute;
+    top: 6px; left: 6px;
+    margin: 0;
+  }
+  label {
+    width: 24px;
+    height: 24px;
+    display: block;
+    position: relative;
+  }
+  .active {
+    background-image: url("../img/check.png");
+    background-position: center;
+  }
+  input[type="checkbox"] {
+    display: none;
+  }
+}
+
+.filters {
+  background-image: url('../img/search_icon.png');
+  background-position: right center;
+  background-repeat: no-repeat;
+  margin: 10px 20px;
+  input, select {
+    @include borderbox;
+    font-size: 14px;
+    height: 30px;
+    padding: 0 15px;
+    width: 180px;
+    margin-right: 40px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #e4e4e4;
+    color: #adadad;
+    &:focus {
+      color: #000;
+    }
+  }
+  @include placeholder(#adadad);
+}
+
+@media all and (max-width: 1320px) {
+  .users-panel {
+    justify-content: center;
+    flex-wrap: wrap;
+    .space, .btn-wrap {
+      flex: none;
+    }
+  }
+  .filters {
+    display: flex;
+    flex: auto;
+    select, input {
+      flex: auto;
+    }
+  }
+}
+
+
+@media all and (max-width: 1200px) {
+  .user {
+    padding: 10px 0;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media all and (max-width: 580px) {
+  .filters {
+    select, input {
+      width: 60px;
+      margin-right: 30px;
+      padding: 0 10px;
+    }
+  }
+}
+
+@media all and (max-width: 460px) {
+  .filters {
+    margin: 10px;
+    select, input {
+      padding: 0 5px;
+    }
+    select {
+      margin-right: 16px;
+    }
+  }
+  .users-list {
+    padding: 30px 10px;
+  }
+  .user {
+    .btn {
+      button {
+        padding: 0 10px;
+      }
+    }
+  }
+}

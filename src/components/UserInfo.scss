@@ -1,0 +1,23 @@
+.user-wrap {
+  width: 300px;
+  margin: 20px auto;
+  text-align: center;
+  .logo {
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    img {
+      height: 100%;
+    }
+  }
+  h2 {
+    margin: 20px 0 10px 0;
+  }
+  span {
+    display: inline-block;
+    color: #5e6e79;
+    margin-bottom: 10px;
+  }
+}
